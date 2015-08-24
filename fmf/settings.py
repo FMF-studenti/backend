@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'rest_framework',
     'social.apps.django_app.default',
+    'common',
     'quotes'
 )
 

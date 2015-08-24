@@ -16,9 +16,11 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from rest_framework import routers
+from common import views as common_views
 from quotes import views as quote_views
 
 router = routers.DefaultRouter()
+router.register(r'authors', common_views.AuthorViewSet)
 router.register(r'quotes', quote_views.QuoteViewSet)
 
 # Wire up our API using automatic URL routing.

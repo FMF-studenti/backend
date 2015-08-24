@@ -1,0 +1,25 @@
+- model: common.author
+  pk: 1
+  fields:
+    first_name: Tadej
+    last_name: Novak
+    contribution: vzdrževanje strani; združevanje v smiselno celoto;
+    active: true
+- model: common.author
+  pk: 2
+  fields:
+    first_name: Jurij
+    last_name: Kodre
+    contribution: izdelava večih strani, ki so bile kasneje združene pod skupno stranjo
+- model: common.author
+  pk: 3
+  fields:
+    first_name: Nace
+    last_name: Hudobivnik
+    contribution: vzdrževanje strani; izdelava večih strani in združevanje študentskih strani v smiselno celoto
+- model: common.author
+  pk: 4
+  fields:
+    first_name: Peter
+    last_name: Gabrovšek
+    contribution: prenos Izjav s Fizikalnega spletnika na skupno stran

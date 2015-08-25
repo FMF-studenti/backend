@@ -41,8 +41,8 @@ INSTALLED_APPS = (
     'rest_framework',
     'corsheaders',
     'social.apps.django_app.default',
-    'common',
-    'quotes'
+    'fmf.common',
+    'fmf.quotes'
 )
 
 MIDDLEWARE_CLASSES = (

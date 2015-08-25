@@ -16,8 +16,8 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from rest_framework import routers
-from common import views as common_views
-from quotes import views as quote_views
+from fmf.common import views as common_views
+from fmf.quotes import views as quote_views
 
 router = routers.DefaultRouter()
 router.register(r'authors', common_views.AuthorViewSet)

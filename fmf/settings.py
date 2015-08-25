@@ -40,8 +40,10 @@ INSTALLED_APPS = (
     'django_extensions',
     'rest_framework',
     'corsheaders',
+    'oauth2_provider',
     'social.apps.django_app.default',
     'fmf.common',
+    'fmf.discourse',
     'fmf.quotes'
 )
 
@@ -77,14 +79,23 @@ TEMPLATES = [
     },
 ]
 
-# REST_FRAMEWORK = {
-#     'DEFAULT_PERMISSION_CLASSES': (
-#         'rest_framework.permissions.IsAuthenticated',
-#     )
-# }
+REST_FRAMEWORK = {
+    'UNICODE_JSON': False,
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.ext.rest_framework.OAuth2Authentication',
+    ),
+    # 'DEFAULT_PERMISSION_CLASSES': (
+    #     'rest_framework.permissions.IsAuthenticated',
+    # )
+}
 
 AUTHENTICATION_BACKENDS = (
-   'django.contrib.auth.backends.ModelBackend',
+    'fmf.discourse.auth.discourse.DiscourseAuth',
+    'django.contrib.auth.backends.ModelBackend',
 )
 
 WSGI_APPLICATION = 'fmf.wsgi.application'
@@ -102,6 +113,7 @@ DATABASES = {
     }
 }
 
+LOGIN_URL = '/auth/login'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

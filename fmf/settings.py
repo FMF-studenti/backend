@@ -54,6 +54,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    'oauth2_provider.middleware.OAuth2TokenMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -81,20 +82,29 @@ TEMPLATES = [
 
 REST_FRAMEWORK = {
     'UNICODE_JSON': False,
+    # 'PAGINATE_BY': 10,
+    # 'PAGINATE_BY_PARAM': 'page_size',
+    # 'MAX_PAGINATE_BY': 100,
+    'DEFAULT_PARSER_CLASSES': (
+        'rest_framework_ember.parsers.JSONParser',
+        'rest_framework.parsers.FormParser',
+        'rest_framework.parsers.MultiPartParser'
+    ),
     'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework.renderers.JSONRenderer',
+        'rest_framework_ember.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'oauth2_provider.ext.rest_framework.OAuth2Authentication',
     ),
-    # 'DEFAULT_PERMISSION_CLASSES': (
-    #     'rest_framework.permissions.IsAuthenticated',
-    # )
+    # 'DEFAULT_PAGINATION_CLASS':
+    #     'rest_framework_ember.pagination.PageNumberPagination',
 }
+
 
 AUTHENTICATION_BACKENDS = (
     'fmf.discourse.auth.discourse.DiscourseAuth',
+    'oauth2_provider.backends.OAuth2Backend',
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -114,6 +124,9 @@ DATABASES = {
 }
 
 LOGIN_URL = '/auth/login'
+
+REST_EMBER_FORMAT_KEYS = True
+REST_EMBER_PLURALIZE_KEYS = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

@@ -22,6 +22,12 @@ class DiscourseAuth(BaseAuth):
     secret = os.environ['DISCOURSE_SSO_SECRET']
     host = os.environ['DISCOURSE_HOST']
 
+    EXTRA_DATA = [
+        ('username', 'username'),
+        ('email', 'email'),
+        ('external_id', 'external_id')
+    ]
+
     sso = DiscourseSSO(secret)
 
     def get_and_store_nonce(self, url):

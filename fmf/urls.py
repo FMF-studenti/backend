@@ -20,20 +20,18 @@ from rest_framework import routers
 from oauth2_provider import views as oauth2_provider
 
 from fmf.common import views as common_views
-from fmf.discourse.api import views as discourse_views
+from fmf.discourse import views as discourse_views
 from fmf.quotes import views as quote_views
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'authors', common_views.AuthorViewSet)
 router.register(r'quotes', quote_views.QuoteViewSet)
+router.register(r'users', discourse_views.UserViewSet, base_name='users')
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
     url(r'^api/', include(router.urls, namespace='api')),
-
-    url(r'^api/users$', RedirectView.as_view(url='/api/users/me', permanent=False), name="api:user-redirect"),
-    url(r'^api/users/me$', discourse_views.user_info, name="api:user"),
 
     url(r'^admin/', include(admin.site.urls)),
 

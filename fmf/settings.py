@@ -39,9 +39,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'oauth2_provider',
     'rest_framework',
     'corsheaders',
-    'oauth2_provider',
     'social.apps.django_app.default',
     'fmf.common',
     'fmf.discourse',
@@ -66,7 +66,7 @@ ROOT_URLCONF = 'fmf.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,15 +87,21 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.FormParser',
         'rest_framework.parsers.MultiPartParser'
     ),
-    'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework_ember.renderers.JSONRenderer',
-        'rest_framework.renderers.BrowsableAPIRenderer',
-    ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'oauth2_provider.ext.rest_framework.OAuth2Authentication',
+        'rest_framework.authentication.SessionAuthentication',
     )
 }
 
+if DEBUG:
+    REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = (
+        'rest_framework_ember.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    )
+else:
+    REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'] = (
+        'rest_framework_ember.renderers.JSONRenderer',
+    )
 
 AUTHENTICATION_BACKENDS = (
     'fmf.discourse.auth.discourse.DiscourseAuth',

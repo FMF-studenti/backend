@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -81,10 +82,6 @@ TEMPLATES = [
 ]
 
 REST_FRAMEWORK = {
-    'UNICODE_JSON': False,
-    # 'PAGINATE_BY': 10,
-    # 'PAGINATE_BY_PARAM': 'page_size',
-    # 'MAX_PAGINATE_BY': 100,
     'DEFAULT_PARSER_CLASSES': (
         'rest_framework_ember.parsers.JSONParser',
         'rest_framework.parsers.FormParser',
@@ -96,9 +93,7 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'oauth2_provider.ext.rest_framework.OAuth2Authentication',
-    ),
-    # 'DEFAULT_PAGINATION_CLASS':
-    #     'rest_framework_ember.pagination.PageNumberPagination',
+    )
 }
 
 
@@ -115,12 +110,9 @@ if DEBUG:
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
+# Parse database configuration from $DATABASE_URL
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    'default': dj_database_url.config()
 }
 
 LOGIN_URL = '/auth/login'

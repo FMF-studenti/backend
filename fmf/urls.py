@@ -43,3 +43,7 @@ urlpatterns = [
     url(r'^auth/login/$', RedirectView.as_view(url='/auth/login/discourse/', permanent=False), name="auth:discourse-redirect"),
     url(r'^auth/', include('social.apps.django_app.urls', namespace='social'))
 ]
+
+# Misc
+admin.site.site_title = 'Študentske strani FMF'
+admin.site.site_header = 'Študentske strani FMF - Admin'

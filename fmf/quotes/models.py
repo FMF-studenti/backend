@@ -8,4 +8,4 @@ class Quote(models.Model):
     date = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return str(self.pk) + ': ' + self.author
+        return sself.author + ': ' + self.content

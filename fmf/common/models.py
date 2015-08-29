@@ -9,3 +9,6 @@ class Author(models.Model):
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name
+
+    def name(self):
+        return self.__str__()

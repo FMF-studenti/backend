@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Author
+from adminsortable.admin import SortableAdmin
+from .models import Author, ExternalLink
 
 
 class AuthorAdmin(admin.ModelAdmin):
@@ -7,4 +8,11 @@ class AuthorAdmin(admin.ModelAdmin):
     list_filter = ['active']
     search_fields = ['name']
 
+
+class ExternalLinkAdmin(SortableAdmin):
+    list_display = ('title', 'url', 'order')
+    search_fields = ['title']
+
+
 admin.site.register(Author, AuthorAdmin)
+admin.site.register(ExternalLink, ExternalLinkAdmin)

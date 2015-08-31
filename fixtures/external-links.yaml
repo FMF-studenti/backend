@@ -1,0 +1,30 @@
+- model: common.externallink
+  pk: 1
+  fields:
+    title: Uradna stran FMF
+    url: http://fmf.uni-lj.si
+    order: 0
+- model: common.externallink
+  pk: 2
+  fields:
+    title: VIS
+    url: https://vis.fmf.uni-lj.si
+    order: 1
+- model: common.externallink
+  pk: 3
+  fields:
+    title: Spletna učilnica
+    url: http://ucilnica.fmf.uni-lj.si
+    order: 2
+- model: common.externallink
+  pk: 4
+  fields:
+    title: Predmeti
+    url: http://predmeti.fmf.uni-lj.si
+    order: 3
+- model: common.externallink
+  pk: 5
+  fields:
+    title: Študentski svet
+    url: http://svet.fmf.si
+    order: 4

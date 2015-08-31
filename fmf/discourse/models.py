@@ -2,7 +2,8 @@ from django.db import models
 
 
 class User(models.Model):
-    managed = False
+    class Meta:
+        managed = False
 
     name = models.CharField(max_length=256)
     username = models.CharField(max_length=256)

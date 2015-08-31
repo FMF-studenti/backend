@@ -3,7 +3,7 @@
   fields:
     first_name: Tadej
     last_name: Novak
-    contribution: vzdrževanje strani; združevanje v smiselno celoto;
+    contribution: vzdrževanje strani; združevanje v smiselno celoto
     active: true
 - model: common.author
   pk: 2

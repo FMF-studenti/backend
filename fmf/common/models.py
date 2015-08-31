@@ -1,4 +1,5 @@
 from django.db import models
+from adminsortable.models import SortableMixin
 
 
 class Author(models.Model):
@@ -12,3 +13,18 @@ class Author(models.Model):
 
     def name(self):
         return self.__str__()
+
+
+class ExternalLink(SortableMixin):
+    class Meta:
+        ordering = ['order']
+
+    title = models.CharField(max_length=50)
+    url = models.URLField()
+
+    # define the field the model should be ordered by
+    order = models.PositiveIntegerField(default=0, editable=False, db_index=True)
+    order_field_name = 'order'
+
+    def __str__(self):
+        return self.title

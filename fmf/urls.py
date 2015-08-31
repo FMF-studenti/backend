@@ -25,6 +25,7 @@ from fmf.quotes import views as quote_views
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'authors', common_views.AuthorViewSet)
+router.register(r'externalLinks', common_views.ExternalLinkViewSet)
 router.register(r'quotes', quote_views.QuoteViewSet)
 router.register(r'users', discourse_views.UserViewSet, base_name='users')
 

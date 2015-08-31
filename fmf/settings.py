@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'oauth2_provider',
     'rest_framework',
+    'adminsortable',
     'corsheaders',
     'social.apps.django_app.default',
     'fmf.common',
@@ -72,6 +73,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.core.context_processors.static',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'social.apps.django_app.context_processors.backends',

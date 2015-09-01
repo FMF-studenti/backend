@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'django_filters',
     'oauth2_provider',
     'rest_framework',
     'adminsortable',
@@ -46,6 +47,7 @@ INSTALLED_APPS = (
     'social.apps.django_app.default',
     'fmf.common',
     'fmf.discourse',
+    'fmf.notes',
     'fmf.quotes'
 )
 

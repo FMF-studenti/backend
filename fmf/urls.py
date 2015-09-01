@@ -21,13 +21,23 @@ from oauth2_provider import views as oauth2_provider
 
 from fmf.common import views as common_views
 from fmf.discourse import views as discourse_views
-from fmf.quotes import views as quote_views
+from fmf.notes import views as notes_views
+from fmf.quotes import views as quotes_views
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'authors', common_views.AuthorViewSet)
 router.register(r'externalLinks', common_views.ExternalLinkViewSet)
-router.register(r'quotes', quote_views.QuoteViewSet)
+
+router.register(r'departments', notes_views.DepartmentViewSet)
+router.register(r'levels', notes_views.LevelViewSet)
+router.register(r'years', notes_views.YearViewSet)
+router.register(r'subjects', notes_views.SubjectViewSet)
+router.register(r'notes', notes_views.NoteViewSet)
+
+router.register(r'quotes', quotes_views.QuoteViewSet)
+
 router.register(r'users', discourse_views.UserViewSet, base_name='users')
+
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

@@ -11,7 +11,8 @@ def user_info(request):
     	'username': info['user']['username'],
     	'name': info['user']['name'],
     	'messages': info['user']['private_messages_stats']['unread'],
-    	'avatar': os.environ['DISCOURSE_HOST'] + info['user']['avatar_template'].replace('{size}', '56')
+    	'avatar': os.environ['DISCOURSE_HOST'] + info['user']['avatar_template'].replace('{size}', '56'),
+        'administrator': request.user and request.user.is_staff
     }
 
     return data

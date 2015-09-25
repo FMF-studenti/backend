@@ -1,0 +1,447 @@
+- model: notes.subject
+  pk: 1
+  fields:
+    department: 1
+    level: 1
+    year: 1
+    name: Fizika I
+
+- model: notes.subject
+  pk: 2
+  fields:
+    department: 1
+    level: 1
+    year: 1
+    name: Matematika I
+
+- model: notes.subject
+  pk: 3
+  fields:
+    department: 1
+    level: 1
+    year: 1
+    name: Kemija I
+
+- model: notes.subject
+  pk: 4
+  fields:
+    department: 1
+    level: 1
+    year: 1
+    name: Fizika II
+
+- model: notes.subject
+  pk: 5
+  fields:
+    department: 1
+    level: 1
+    year: 1
+    name: Matematika II
+
+- model: notes.subject
+  pk: 6
+  fields:
+    department: 1
+    level: 1
+    year: 1
+    name: Kemija II
+
+- model: notes.subject
+  pk: 7
+  fields:
+    department: 1
+    level: 1
+    year: 1
+    name: Astronomska opazovanja
+
+- model: notes.subject
+  pk: 8
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Moderna fizika I
+
+- model: notes.subject
+  pk: 9
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Matematika III
+
+- model: notes.subject
+  pk: 10
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Statistična termodinamika
+
+- model: notes.subject
+  pk: 11
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Moderna fizika II
+
+- model: notes.subject
+  pk: 12
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Matematika IV
+
+- model: notes.subject
+  pk: 13
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Klasična mehanika I
+
+- model: notes.subject
+  pk: 14
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Matematična fizika I
+
+- model: notes.subject
+  pk: 15
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Astronomija I
+
+- model: notes.subject
+  pk: 16
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Astronomija II
+
+- model: notes.subject
+  pk: 17
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Meteorologija
+
+- model: notes.subject
+  pk: 18
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Geofizika
+
+- model: notes.subject
+  pk: 19
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Elektronika I
+
+- model: notes.subject
+  pk: 20
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Elektronika II
+
+- model: notes.subject
+  pk: 21
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Računalništvo
+
+- model: notes.subject
+  pk: 22
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Numerične metode
+
+- model: notes.subject
+  pk: 23
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Kako stvari delujejo?
+
+- model: notes.subject
+  pk: 24
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Naše in druga osončja
+
+- model: notes.subject
+  pk: 25
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Verjetnost v fiziki
+
+- model: notes.subject
+  pk: 26
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Elektromagnetno polje
+
+- model: notes.subject
+  pk: 27
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Kvantna mehanika I
+
+- model: notes.subject
+  pk: 28
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Fizikalna merjenja I
+
+- model: notes.subject
+  pk: 29
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Fizika trdne snovi
+
+- model: notes.subject
+  pk: 30
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Fizikalna merjenja II
+
+- model: notes.subject
+  pk: 31
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Fizika jedra in osnovnih delcev
+
+- model: notes.subject
+  pk: 32
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Optika
+
+- model: notes.subject
+  pk: 33
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Klasična mehanika II
+
+- model: notes.subject
+  pk: 34
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Matematična fizika II
+
+- model: notes.subject
+  pk: 35
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Matematično-fizikalni praktikum
+
+- model: notes.subject
+  pk: 36
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Opazovalna astrofizika
+
+- model: notes.subject
+  pk: 37
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Teoretična astrofizika
+
+- model: notes.subject
+  pk: 38
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Fizikalna kemija
+
+- model: notes.subject
+  pk: 39
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Jedrska tehnika in energetika
+
+- model: notes.subject
+  pk: 40
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Radiacijska in reaktorska fizika
+
+- model: notes.subject
+  pk: 41
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Zajemanje in obdelava podatkov
+
+- model: notes.subject
+  pk: 42
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Posredovanje fizike
+
+- model: notes.subject
+  pk: 43
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Didaktika fizike I
+
+- model: notes.subject
+  pk: 44
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Management
+
+- model: notes.subject
+  pk: 45
+  fields:
+    department: 1
+    level: 1
+    year: 1
+    name: Drugo
+
+- model: notes.subject
+  pk: 46
+  fields:
+    department: 1
+    level: 1
+    year: 2
+    name: Drugo
+
+- model: notes.subject
+  pk: 47
+  fields:
+    department: 1
+    level: 1
+    year: 3
+    name: Drugo
+
+- model: notes.subject
+  pk: 48
+  fields:
+    department: 1
+    level: 2
+    year: 1
+    name: Drugo
+
+- model: notes.subject
+  pk: 49
+  fields:
+    department: 1
+    level: 2
+    year: 2
+    name: Drugo
+
+- model: notes.subject
+  pk: 50
+  fields:
+    department: 2
+    level: 1
+    year: 1
+    name: Drugo
+
+- model: notes.subject
+  pk: 51
+  fields:
+    department: 2
+    level: 1
+    year: 2
+    name: Drugo
+
+- model: notes.subject
+  pk: 52
+  fields:
+    department: 2
+    level: 1
+    year: 3
+    name: Drugo
+
+- model: notes.subject
+  pk: 53
+  fields:
+    department: 2
+    level: 2
+    year: 1
+    name: Drugo
+
+- model: notes.subject
+  pk: 54
+  fields:
+    department: 2
+    level: 2
+    year: 2
+    name: Drugo
+
+- model: notes.subject
+  pk: 55
+  fields:
+    department: 1
+    level: 3
+    year: 6
+    name: Drugo
+
+- model: notes.subject
+  pk: 56
+  fields:
+    department: 2
+    level: 3
+    year: 6
+    name: Drugo

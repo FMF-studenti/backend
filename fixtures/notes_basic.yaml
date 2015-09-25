@@ -1,0 +1,49 @@
+- model: notes.department
+  pk: 1
+  fields:
+      name: Oddelek za fiziko
+
+- model: notes.department
+  pk: 2
+  fields:
+      name: Oddelek za matematiko
+
+
+- model: notes.level
+  pk: 1
+  fields:
+    name: 1. stopnja
+    years: [1, 2, 3]
+
+- model: notes.level
+  pk: 2
+  fields:
+    name: 2. stopnja
+    years: [1, 2]
+
+- model: notes.level
+  pk: 3
+  fields:
+    name: 3. stopnja
+    years: [6]
+
+
+- model: notes.year
+  pk: 1
+  fields:
+    name: 1. letnik
+
+- model: notes.year
+  pk: 2
+  fields:
+    name: 2. letnik
+
+- model: notes.year
+  pk: 3
+  fields:
+    name: 3. letnik
+
+- model: notes.year
+  pk: 6
+  fields:
+    name: Ostalo

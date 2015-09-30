@@ -1,5 +1,6 @@
 from rest_framework import filters, viewsets
 from .models import Department, Level, Year, Subject, Note
+from .pagination import NotePagination
 from .serializers import DepartmentSerializer, LevelSerializer, YearSerializer, SubjectSerializer, NoteSerializer
 
 
@@ -19,12 +20,13 @@ class YearViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class SubjectViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Subject.objects.all()
+    queryset = Subject.objects.all().order_by('name')
     serializer_class = SubjectSerializer
 
 
 class NoteViewSet(viewsets.ModelViewSet):
-    queryset = Note.objects.all()
+    queryset = Note.objects.all().order_by('-pk')
     serializer_class = NoteSerializer
+    pagination_class = NotePagination
     filter_backends = (filters.DjangoFilterBackend,)
     filter_fields = ('subject', 'subject__year', 'subject__level', 'subject__department')

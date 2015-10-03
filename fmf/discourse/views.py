@@ -2,8 +2,15 @@ from django.http import Http404, JsonResponse
 from rest_framework import views, viewsets
 from rest_framework.permissions import IsAuthenticated
 from .api import discourse
-from .models import User
-from .serializers import UserSerializer
+from .serializers import TopicSerializer, UserSerializer
+
+
+class TopicViewSet(viewsets.ReadOnlyModelViewSet):
+    serializer_class = TopicSerializer
+
+    def get_queryset(self):
+        topics = discourse.latest_topics(self.request)
+        return topics
 
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):

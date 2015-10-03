@@ -36,6 +36,7 @@ router.register(r'notes', notes_views.NoteViewSet)
 
 router.register(r'quotes', quotes_views.QuoteViewSet)
 
+router.register(r'topics', discourse_views.TopicViewSet, base_name='topics')
 router.register(r'users', discourse_views.UserViewSet, base_name='users')
 
 

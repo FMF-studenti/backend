@@ -34,7 +34,7 @@ router.register(r'years', notes_views.YearViewSet)
 router.register(r'subjects', notes_views.SubjectViewSet)
 router.register(r'notes', notes_views.NoteViewSet)
 
-router.register(r'quotes', quotes_views.QuoteViewSet)
+router.register(r'quotes', quotes_views.QuoteViewSet, base_name='quotes')
 
 router.register(r'topics', discourse_views.TopicViewSet, base_name='topics')
 router.register(r'users', discourse_views.UserViewSet, base_name='users')

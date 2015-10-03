@@ -16,3 +16,7 @@ def user_info(request):
     }
 
     return data
+
+def user_logout(request):
+    user = request.user.social_auth.get(provider='discourse').extra_data
+    return api.user_logout(user['external_id'])

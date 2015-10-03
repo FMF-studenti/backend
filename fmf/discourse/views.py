@@ -1,5 +1,5 @@
-from django.http import Http404
-from rest_framework import viewsets
+from django.http import Http404, JsonResponse
+from rest_framework import views, viewsets
 from rest_framework.permissions import IsAuthenticated
 from .api import discourse
 from .models import User
@@ -24,3 +24,10 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
         user = discourse.user_info(self.request)
 
         return user
+
+
+class UserLogoutView(views.APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def post(self, request):
+        return JsonResponse(discourse.user_logout(request))

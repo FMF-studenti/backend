@@ -128,7 +128,8 @@ DATABASES = {
     'default': dj_database_url.config()
 }
 
-LOGIN_URL = '/auth/login'
+LOGIN_URL = '/auth/login/discourse/'
+LOGIN_REDIRECT_URL = '/'
 
 REST_EMBER_FORMAT_KEYS = True
 REST_EMBER_PLURALIZE_KEYS = True

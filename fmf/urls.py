@@ -49,6 +49,8 @@ urlpatterns = [
     url(r'^auth/authorize/$', oauth2_provider.AuthorizationView.as_view(), name="oauth:authorize"),
     url(r'^auth/token/$', oauth2_provider.TokenView.as_view(), name="oauth:token"),
     url(r'^auth/revoke_token/$', oauth2_provider.RevokeTokenView.as_view(), name="oauth:revoke-token"),
+    url(r'^auth/finalise/', common_views.logout_view),
+    url(r'^auth/forum_logout/', discourse_views.UserLogoutView.as_view()),
 
     url(r'^auth/$', RedirectView.as_view(url='/auth/login/', permanent=True), name="auth:login-redirect"),
     url(r'^auth/login/$', RedirectView.as_view(url='/auth/login/discourse/', permanent=False), name="auth:discourse-redirect"),

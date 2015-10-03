@@ -15,6 +15,15 @@ class Author(models.Model):
         return self.__str__()
 
 
+class BlogArticle(models.Model):
+    class Meta:
+        managed = False
+
+    title = models.CharField(max_length=256)
+    link = models.CharField(max_length=256)
+    published = models.DateTimeField()
+
+
 class ExternalLink(SortableMixin):
     class Meta:
         ordering = ['order']

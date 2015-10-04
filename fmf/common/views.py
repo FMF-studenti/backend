@@ -1,3 +1,4 @@
+import os
 import re
 import feedparser
 from datetime import datetime
@@ -12,7 +13,7 @@ def logout_view(request):
     logout(request)
 
     data = request.GET
-    return redirect('http://localhost:4200/?' + data.urlencode())
+    return redirect(os.environ['FRONTEND_URL'] + '/?' + data.urlencode())
 
 
 class AuthorViewSet(viewsets.ReadOnlyModelViewSet):
@@ -24,7 +25,7 @@ class BlogArticleViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = BlogArticleSerializer
 
     def get_queryset(self):
-        feed = feedparser.parse('http://revija.fmf.si/feed/')
+        feed = feedparser.parse(os.environ['REVIJA_URL'] + '/feed/')
         articles = []
         for entry in feed.entries:
             id_match = re.search(r'p=(\S+)', entry['id'])

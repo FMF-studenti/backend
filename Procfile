@@ -1,1 +1,1 @@
-web: gunicorn fmf.wsgi --log-file -
+web: python manage.py runserver $PORT

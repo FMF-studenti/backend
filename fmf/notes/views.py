@@ -28,5 +28,6 @@ class NoteViewSet(viewsets.ModelViewSet):
     queryset = Note.objects.all().order_by('-pk')
     serializer_class = NoteSerializer
     pagination_class = NotePagination
-    filter_backends = (filters.DjangoFilterBackend,)
-    filter_fields = ('subject', 'subject__year', 'subject__level', 'subject__department')
+    filter_backends = (filters.DjangoFilterBackend, filters.SearchFilter)
+    filter_fields = ('subject', 'subject__year', 'subject__level', 'subject__department', 'subject__others')
+    search_fields = ('title', 'description', 'subject__name')

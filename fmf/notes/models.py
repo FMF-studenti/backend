@@ -28,6 +28,7 @@ class Subject(models.Model):
     level = models.ForeignKey(Level)
     year = models.ForeignKey(Year)
     name = models.CharField(max_length=200)
+    others = models.BooleanField(default=False, blank=True)
 
     def __str__(self):
         return self.name + ' (' + str(self.year) + ', ' + str(self.level) + ', ' + str(self.department) + ')'

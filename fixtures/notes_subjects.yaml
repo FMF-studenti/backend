@@ -357,6 +357,7 @@
     level: 1
     year: 1
     name: Drugo
+    others: true
 
 - model: notes.subject
   pk: 46
@@ -365,6 +366,7 @@
     level: 1
     year: 2
     name: Drugo
+    others: true
 
 - model: notes.subject
   pk: 47
@@ -373,6 +375,7 @@
     level: 1
     year: 3
     name: Drugo
+    others: true
 
 - model: notes.subject
   pk: 48
@@ -381,6 +384,7 @@
     level: 2
     year: 1
     name: Drugo
+    others: true
 
 - model: notes.subject
   pk: 49
@@ -389,6 +393,7 @@
     level: 2
     year: 2
     name: Drugo
+    others: true
 
 - model: notes.subject
   pk: 50
@@ -397,6 +402,7 @@
     level: 1
     year: 1
     name: Drugo
+    others: true
 
 - model: notes.subject
   pk: 51
@@ -405,6 +411,7 @@
     level: 1
     year: 2
     name: Drugo
+    others: true
 
 - model: notes.subject
   pk: 52
@@ -413,6 +420,7 @@
     level: 1
     year: 3
     name: Drugo
+    others: true
 
 - model: notes.subject
   pk: 53
@@ -421,6 +429,7 @@
     level: 2
     year: 1
     name: Drugo
+    others: true
 
 - model: notes.subject
   pk: 54
@@ -429,6 +438,7 @@
     level: 2
     year: 2
     name: Drugo
+    others: true
 
 - model: notes.subject
   pk: 55
@@ -437,6 +447,7 @@
     level: 3
     year: 6
     name: Drugo
+    others: true
 
 - model: notes.subject
   pk: 56
@@ -445,3 +456,4 @@
     level: 3
     year: 6
     name: Drugo
+    others: true

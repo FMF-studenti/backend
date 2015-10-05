@@ -23,7 +23,7 @@ class YearSerializer(serializers.ModelSerializer):
 class SubjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subject
-        fields = ('id', 'name', 'year', 'level', 'department')
+        fields = ('id', 'name', 'year', 'level', 'department', 'others')
 
 
 class NoteSerializer(serializers.ModelSerializer):

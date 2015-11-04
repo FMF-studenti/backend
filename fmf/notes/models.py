@@ -42,3 +42,10 @@ class Note(models.Model):
     uploader = models.CharField(max_length=200)
     description = models.TextField()
     time = models.DateTimeField(auto_now_add=True)
+
+
+class File(models.Model):
+    class Meta:
+        managed = False
+
+    name = models.CharField(max_length=256)

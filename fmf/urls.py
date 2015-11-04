@@ -29,11 +29,12 @@ router.register(r'authors', common_views.AuthorViewSet)
 router.register(r'blogArticles', common_views.BlogArticleViewSet, base_name='blogArticles')
 router.register(r'externalLinks', common_views.ExternalLinkViewSet)
 
-router.register(r'departments', notes_views.DepartmentViewSet)
-router.register(r'levels', notes_views.LevelViewSet)
-router.register(r'years', notes_views.YearViewSet)
-router.register(r'subjects', notes_views.SubjectViewSet)
-router.register(r'notes', notes_views.NoteViewSet)
+router.register(r'notes/departments', notes_views.DepartmentViewSet)
+router.register(r'notes/levels', notes_views.LevelViewSet)
+router.register(r'notes/years', notes_views.YearViewSet)
+router.register(r'notes/subjects', notes_views.SubjectViewSet)
+router.register(r'notes/notes', notes_views.NoteViewSet)
+router.register(r'notes/files', notes_views.FileViewSet, base_name='files')
 
 router.register(r'quotes', quotes_views.QuoteViewSet, base_name='quotes')
 

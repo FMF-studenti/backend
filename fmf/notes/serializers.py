@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Department, Level, Year, Subject, Note
+from .models import Department, Level, Year, Subject, Note, File
 
 
 class DepartmentSerializer(serializers.ModelSerializer):
@@ -30,3 +30,9 @@ class NoteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Note
         fields = ('id', 'file', 'title', 'subject', 'author', 'uploader', 'description', 'time')
+
+
+class FileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = File
+        fields = ('id', 'name')

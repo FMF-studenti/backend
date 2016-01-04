@@ -60,9 +60,9 @@ class DiscourseAuth(BaseAuth):
 
         return {'username': response['username'],
                 'email': response['email'],
-                'fullname': response['name'].replace('+', ' '),
+                'fullname': response['name'].replace('+', ' ') if 'name' in response else '',
                 'first_name': '',
-                'last_name': '' }
+                'last_name': ''}
 
     def auth_url(self):
         """Build and return complete URL."""
@@ -72,7 +72,7 @@ class DiscourseAuth(BaseAuth):
 
     def auth_complete(self, *args, **kwargs):
         """Completes login process, must return user instance."""
-        
+
         if not self.sso.validate(self.data['sso'], self.data['sig']):
             raise Exception("Someone wants to hack us!")
 
@@ -83,5 +83,6 @@ class DiscourseAuth(BaseAuth):
         else:
             raise Exception("Nonce does not match!")
 
-        kwargs.update({'response': self.sso.get_data(self.data['sso']), 'backend': self})
+        kwargs.update({'response': self.sso.get_data(
+            self.data['sso']), 'backend': self})
         return self.strategy.authenticate(*args, **kwargs)

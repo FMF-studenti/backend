@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Topic(models.Model):
+
     class Meta:
         managed = False
 
@@ -13,6 +14,7 @@ class Topic(models.Model):
 
 
 class User(models.Model):
+
     class Meta:
         managed = False
 
@@ -21,3 +23,4 @@ class User(models.Model):
     messages = models.IntegerField()
     avatar = models.CharField(max_length=256)
     administrator = models.BooleanField()
+    error = models.BooleanField()

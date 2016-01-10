@@ -19,7 +19,10 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
 
     def get_queryset(self):
         user = discourse.user_info(self.request)
-        return [user]
+        if 'id' in user:
+            return [user]
+        else:
+            return []
 
     def get_object(self):
         lookup_url_kwarg = self.lookup_url_kwarg or self.lookup_field

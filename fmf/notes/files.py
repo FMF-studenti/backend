@@ -1,4 +1,5 @@
 import os
+import re
 from datetime import datetime
 
 
@@ -6,10 +7,13 @@ def generate_upload_file_name():
     now = datetime.now()
     return [os.environ['NOTES_UPLOAD_PATH'], now.strftime('%Y%m%d%H%M%S') + '.pdf']
 
+
 def list_uploaded_notes():
     path = os.environ['NOTES_UPLOAD_PATH']
-    files = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f)) and f.endswith('.pdf')]
+    files = [f for f in os.listdir(path) if os.path.isfile(
+        os.path.join(path, f)) and f.endswith('.pdf')]
     return files
+
 
 def handle_uploaded_note(f):
     name = generate_upload_file_name()
@@ -23,10 +27,12 @@ def handle_uploaded_note(f):
         'name': name[1]
     }
 
+
 def move_registered_file_name(f, name):
     uploaded_path = os.environ['NOTES_UPLOAD_PATH']
     path = os.environ['NOTES_REGISTERED_PATH']
-    new_name = name.title().replace(' ', '')[:20]
+    new_name = re.sub(r'[\W_]+', '', name)
+    new_name = new_name[:20]
 
     # check if file exists
     orig_new_name = new_name

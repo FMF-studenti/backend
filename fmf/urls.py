@@ -26,7 +26,8 @@ from fmf.quotes import views as quotes_views
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'authors', common_views.AuthorViewSet)
-router.register(r'blogArticles', common_views.BlogArticleViewSet, base_name='blogArticles')
+router.register(r'blogArticles', common_views.BlogArticleViewSet,
+                base_name='blogArticles')
 router.register(r'externalLinks', common_views.ExternalLinkViewSet)
 
 router.register(r'notes/departments', notes_views.DepartmentViewSet)
@@ -49,14 +50,15 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^auth/authorize/$', oauth2_provider.AuthorizationView.as_view(), name="oauth:authorize"),
-    url(r'^auth/token/$', oauth2_provider.TokenView.as_view(), name="oauth:token"),
-    url(r'^auth/revoke_token/$', oauth2_provider.RevokeTokenView.as_view(), name="oauth:revoke-token"),
+    url(r'^auth/authorize/$', oauth2_provider.AuthorizationView.as_view()),
+    url(r'^auth/token/$', oauth2_provider.TokenView.as_view()),
+    url(r'^auth/revoke_token/$', oauth2_provider.RevokeTokenView.as_view()),
     url(r'^auth/finalise/', common_views.logout_view),
     url(r'^auth/forum_logout/', discourse_views.UserLogoutView.as_view()),
 
-    url(r'^auth/$', RedirectView.as_view(url='/auth/login/', permanent=True), name="auth:login-redirect"),
-    url(r'^auth/login/$', RedirectView.as_view(url='/auth/login/discourse/', permanent=False), name="auth:discourse-redirect"),
+    url(r'^auth/$', RedirectView.as_view(url='/auth/login/', permanent=True)),
+    url(r'^auth/login/$',
+        RedirectView.as_view(url='/auth/login/discourse/', permanent=False)),
     url(r'^auth/', include('social.apps.django_app.urls', namespace='social'))
 ]
 

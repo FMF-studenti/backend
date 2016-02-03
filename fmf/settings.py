@@ -143,4 +143,5 @@ SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
 X_FRAME_OPTIONS = 'DENY'
 
-SILENCED_SYSTEM_CHECKS = ['security.W004', 'security.W008', 'security.W012', 'security.W016']
+SILENCED_SYSTEM_CHECKS = ['security.W004',
+                          'security.W008', 'security.W012', 'security.W016']

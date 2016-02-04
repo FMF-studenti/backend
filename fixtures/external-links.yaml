@@ -14,7 +14,7 @@
   pk: 3
   fields:
     title: Spletna učilnica
-    url: http://ucilnica.fmf.uni-lj.si
+    url: https://ucilnica.fmf.uni-lj.si
     order: 2
 - model: common.externallink
   pk: 4
@@ -26,5 +26,5 @@
   pk: 5
   fields:
     title: Študentski svet
-    url: http://svet.fmf.si
+    url: https://svet.fmf.si
     order: 4

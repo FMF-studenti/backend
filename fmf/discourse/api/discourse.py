@@ -81,3 +81,8 @@ def user_info(request):
 def user_logout(request):
     user = request.user.social_auth.get(provider='discourse').extra_data
     return api.user_logout(user['external_id'])
+
+
+def send_private_message(request):
+    params = dict(request.POST)
+    return api.send_private_message(params['title'][0], params['content'][0])

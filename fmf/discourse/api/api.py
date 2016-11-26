@@ -43,3 +43,38 @@ def user_logout(user_id):
         return r.json()
     except requests.exceptions.ConnectionError:
         return {}
+
+
+def send_private_message(title, content):
+    # raw:wefwfwfwfwfwfwe
+    # title:fefwefw
+    # category:
+    # is_warning:false
+    # archetype:private_message
+    # target_usernames:system
+    # typing_duration_msecs:1600
+    # composer_open_duration_msecs:31744
+    # nested_post:true
+
+    username = os.environ['DISCOURSE_ADMIN']
+    api_key = os.environ['DISCOURSE_MASTER_API']
+
+    data = {
+        'api_key': api_key,
+        'api_username': username,
+        'title': title,
+        'raw': content,
+        'archetype': 'private_message',
+        'target_usernames': 'test'  # username
+    }
+
+    url = common_url('posts')
+
+    print(url)
+    print(data)
+
+    try:
+        r = requests.post(url, data)
+        return r.json()
+    except requests.exceptions.ConnectionError:
+        return {}

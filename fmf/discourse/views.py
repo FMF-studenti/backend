@@ -41,3 +41,10 @@ class UserLogoutView(views.APIView):
 
     def post(self, request):
         return JsonResponse(discourse.user_logout(request))
+
+
+class PrivateMessageViewSet(viewsets.ViewSet):
+    permission_classes = (IsAuthenticated,)
+
+    def create(self, request):
+        return JsonResponse(discourse.send_private_message(request))

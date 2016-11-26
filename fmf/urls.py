@@ -42,6 +42,8 @@ router.register(r'quotes', quotes_views.QuoteViewSet, base_name='quotes')
 router.register(r'topics', discourse_views.TopicViewSet, base_name='topics')
 router.register(r'users', discourse_views.UserViewSet, base_name='users')
 
+router.register(r'pm', discourse_views.PrivateMessageViewSet, base_name='pm')
+
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
